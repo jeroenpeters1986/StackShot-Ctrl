@@ -1,0 +1,34 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>J:\priv-collection\workspace\StackShot Ctrl\public\StackShotCtrl.jar</jar>
+  <outfile>public\Simple Stackshot Controller.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>true</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon>J:\priv-collection\workspace\StackShot Ctrl\mtb-icon.ico</icon>
+  <jre>
+    <path></path>
+    <minVersion>1.6.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <versionInfo>
+    <fileVersion>0.9.9.3</fileVersion>
+    <txtFileVersion>0.9.9.3</txtFileVersion>
+    <fileDescription>Simple Stackshot Controller</fileDescription>
+    <copyright>macro-toolbox.com</copyright>
+    <productVersion>0.9.9.3</productVersion>
+    <txtProductVersion>0.9.9.3</txtProductVersion>
+    <productName>Simple Stackshot Controller</productName>
+    <companyName>macro-toolbox.com</companyName>
+    <internalName>Simple Stackshot Controller</internalName>
+    <originalFilename>Simple Stackshot Controller.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

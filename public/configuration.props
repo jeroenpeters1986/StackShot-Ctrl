@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="OP_MODE">0</entry>
+<entry key="POS2">0</entry>
+<entry key="POS1">0</entry>
+<entry key="TUNLOCK">0.3</entry>
+<entry key="SSC.MAIN">20	60	455	620</entry>
+<entry key="UNLOCK_PULSE">0.3</entry>
+<entry key="STEP_NUMBER">10</entry>
+<entry key="EXT2">0</entry>
+<entry key="EXT1">0</entry>
+<entry key="LensIndex">0</entry>
+<entry key="TheoricExt">0</entry>
+<entry key="CL"/>
+<entry key="TSETTLE">0.1</entry>
+<entry key="CC">		</entry>
+<entry key="TIMELAPSE_NUMBER">0</entry>
+<entry key="LENS.ARRAY">Zeiss Jena Tessar 50/2.8 @inf f2.8	50	2.8	0.6		Zeiss Jena Tessar 50/2.8 @inf f8	50	8	0.6		</entry>
+<entry key="MIRRORLOCKUP">0</entry>
+<entry key="SensorIndex">0</entry>
+<entry key="RAIL.ARRAY">Stackshot	Stackshot	2	2	0	1.588	0.1	0	10	0	3200		Virtual	Virtual	2	2	0	0	0	0	0	0	0		</entry>
+<entry key="PICS">1</entry>
+<entry key="FocalLens">20</entry>
+<entry key="MeasuredExtFOV2">0</entry>
+<entry key="CHECKVERSION">1</entry>
+<entry key="MeasuredExtFOV1">0</entry>
+<entry key="OUTPUTTXT">1</entry>
+<entry key="PupilRatio">0.6</entry>
+<entry key="fNumber">8</entry>
+<entry key="SENSOR.ARRAY">Eos 5D MkII @RAW1	36	24	5616	3744		</entry>
+<entry key="TPULSE">0.3</entry>
+<entry key="TIMELAPSE_INTERVAL">0</entry>
+<entry key="TOFF">0.1</entry>
+<entry key="RANGE_END">1</entry>
+<entry key="MAXCOC">2.5</entry>
+<entry key="DOF_OVERLAP">1</entry>
+<entry key="LOWER_LIMIT">-200</entry>
+<entry key="RailIndex">1</entry>
+<entry key="RANGE_START">0</entry>
+<entry key="STEP_SIZE">0.1</entry>
+<entry key="MeasuredFOV2">0</entry>
+<entry key="MeasuredFOV1">36</entry>
+<entry key="UPPER_LIMIT">200</entry>
+<entry key="FRAMEBELLOWS">0</entry>
+</properties>

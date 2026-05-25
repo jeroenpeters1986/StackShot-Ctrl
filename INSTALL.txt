@@ -1,0 +1,18 @@
+You need JRE6 or JRE7 (32b or 64b) : 
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+or another JVM compatible.
+
+
+Windows :
+- Install FTD2XX drivers (32b or 64b) : 
+http://www.ftdichip.com/Drivers/D2XX.htm 
+- Unzip in a directory.
+- Start the .exe
+
+Linux :
+- Install FTD2XX drivers (32b or 64b) : 
+http://www.ftdichip.com/Drivers/D2XX.htm 
+- Unzip in a directory
+- Open a terminal
+- sudo -s
+- ./SimpleStackShotCtrl.bash

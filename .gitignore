@@ -1,0 +1,55 @@
+# Compiled class files
+bin/
+
+# Logs
+logs/
+*.log
+
+# IDE files
+.settings/
+.metadata/
+*.iml
+.idea/
+
+# Temp files
+*.tmp
+*.bak
+*~
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp output
+output.txt
+*.lnk
+*.log
+
+# Package archive (distribution)
+Package Archive/
+/buttons.psd
+/launch4j.exe - Raccourci.lnk
+/launch4j.log
+/SimpleStackshotCtrl.bat.lnk
+/forms-1.3.0-src.zip
+
+# Canon proprietary files (requires Canon EDSDK license / NDA)
+# JNA bindings generated from Canon EDSDK C headers
+src/edsdk/
+# Canon Picture Styles
+icc/*.BIN
+icc/6000.ICC
+icc/FA.ICC
+icc/FS.ICC
+icc/LA.ICC
+icc/LS.ICC
+icc/NA.ICC
+icc/NS.ICC
+icc/PA.ICC
+icc/PS.ICC
+icc/SA.ICC
+icc/SS.ICC
+# Canon EDSDK driver (obtained from Canon after signing license agreement)
+EDSDK.dll
+EDSPlugin.dll

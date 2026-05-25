@@ -1,0 +1,10 @@
+- Dans eclipse faire exporter jar executable en selectionnant le dossier de destination "public"
+- Lancer le raccourci "SimpleStackshotCtrl.bat" qui réalise l'obscufation avec Zelix.
+- Controler si pas de bug
+- Lancer Lauch4j avec son raccourci. Ouvrir la conf "l4j.xml" et modifier le numéro de version.
+- Lancer la construction de l'exe 
+- aller sur le ftp et uploader le zip du package à /mtb/download/SimpleStackshotCtrl
+- Aller sur le site http://www.macro-toolbox.com/admin/moduleinterface.php?_sx_=f5bfe950&module=DownCnt
+- Créer une nouvelle référence pour le package
+- Aller dans le page manager et ajouter la version.
+- Retourner sur le FTP et editer le fichier version.txt
