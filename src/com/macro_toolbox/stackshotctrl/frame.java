@@ -3340,6 +3340,12 @@ public class frame extends JFrame {
 	}
 	
 	//fonctions helper pour les modifications des chambres textes
+	public static void statuslogFromRail(String message) {
+		if (gb.frame != null) {
+			gb.frame.statuslog(message);
+		}
+	}
+
 	public synchronized void statuslog(String str) {			
 		class Code implements Runnable {
 			private String str;

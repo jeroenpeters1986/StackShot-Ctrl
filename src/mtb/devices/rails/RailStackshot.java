@@ -31,13 +31,15 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 
+import com.macro_toolbox.stackshotctrl.frame;
+
 import ftd2.Ftd2xx;
 
 import mtb.drivers.ftd2xx.FTD2XXHelper;
 
 
 public class RailStackshot extends RailBase {
-	// préférences
+	// prï¿½fï¿½rences
 	// Stackshot
 	private String RAILNAME = "Stackshot";
 	private String RAILTYPE = "Stackshot";
@@ -50,8 +52,8 @@ public class RailStackshot extends RailBase {
 	private boolean HIPRECISION = false;
 	private int TORQUE = 0; // (TORQUE)
 	private int LCD = 10;
-	// préférences
-	// Stackshot défauts
+	// prï¿½fï¿½rences
+	// Stackshot dï¿½fauts
 
 	private double defMaxSPEED = 2.0;
 	private double defRAMP_TIME = 2.0; // (TRAMP)
@@ -165,7 +167,7 @@ public class RailStackshot extends RailBase {
 				else
 					ftd.SET_RAIL_CONFIG_HOLDING_TORQUE(TORQUE);
 				ftd.SET_RAIL_CONFIG_BACKLIGHT(LCD);
-				ftd.SET_RAIL_CONFIG_SPEED(mmToSteps(MAXSPEED));
+				setControllerSpeed(MAXSPEED);
 				ftd.SET_RAIL_CONFIG_RAMP_TIME(RAMP_TIME);
 
 			} catch (IOException e) {
@@ -280,13 +282,24 @@ public class RailStackshot extends RailBase {
 	public int changeRailSpeed(double speed) {
 		// GET_RAIL_SPEED
 		try {
-			ftd.SET_RAIL_CONFIG_SPEED(mmToSteps(speed));
+			setControllerSpeed(speed);
 			// RAIL_CONFIG_SAVE(0);
 		} catch (IOException e) {
 			System.out.println("^^Exception in CHANGE_RAIL_SPEED1");
 			return RESP_NOK;
 		}// Power on configuration
 		return RESP_OK;
+	}
+
+	private void setControllerSpeed(double speed) throws IOException {
+		StackShotSpeedCalculator.SpeedResult result =
+				StackShotSpeedCalculator.calculate(speed, STEPS_PER_REV, MM_PER_REV);
+		ftd.SET_RAIL_CONFIG_SPEED(result.getAppliedStepRate());
+		if (result.isLimited()) {
+			frame.statuslogFromRail("Motor speed limited to "
+					+ nf.format(result.getEffectiveSpeedMmPerSecond())
+					+ " mm/s by the StackShot step-rate limit.");
+		}
 	}
 
 	public int changeRampTime(double time) {
@@ -309,7 +322,7 @@ public class RailStackshot extends RailBase {
 			System.out.println("^^Exception in CHANGE_MM_PER_REV");
 			return RESP_NOK;
 		}
-		return RESP_OK;
+		return changeRailSpeed(MAXSPEED);
 	}
 
 	public int changeStepsPerRev(double val) {
@@ -320,7 +333,7 @@ public class RailStackshot extends RailBase {
 			System.out.println("^^Exception in CHANGE_STEPS_PER_REV");
 			return RESP_NOK;
 		}
-		return RESP_OK;
+		return changeRailSpeed(MAXSPEED);
 	}
 
 	public int changeBacklash(double val) {
@@ -384,7 +397,7 @@ public class RailStackshot extends RailBase {
 						}
 						sequence = statelocked;
 					}*/
-					//si on passe d'un mvt à IDLE
+					//si on passe d'un mvt ï¿½ IDLE
 					if(!statemoving&&!stateshutting){
 						if(moving||shutting) {
 							//System.out.println("on s'arrete");
@@ -396,7 +409,7 @@ public class RailStackshot extends RailBase {
 						}
 					}
 					if (statemoving || stateshutting) {
-						// si on passe de IDLE à autre chose
+						// si on passe de IDLE ï¿½ autre chose
 						if (!moving && !shutting) {
 							if(stateNotifier!=null) stateNotifier.stateNotifier(RUNNING);
 							//System.out.println("on demarre");
@@ -414,7 +427,7 @@ public class RailStackshot extends RailBase {
 							System.out.println("^^Exception in threadEvaluate");
 						}
 
-						// si on passe d'un mvt à IDLE
+						// si on passe d'un mvt ï¿½ IDLE
 						if (status == FTD2XXHelper.RAIL_STATUS_IDLE) {
 							if(stateNotifier!=null) stateNotifier.stateNotifier(IDLE);
 							/*if (!statelocked)
@@ -722,7 +735,7 @@ public class RailStackshot extends RailBase {
 	
 	
 	
-	// préférences
+	// prï¿½fï¿½rences
 	JPanel contentPane;
 	JTextField textFieldMAXSPEED;
 	JTextField textFieldTRAMP;
@@ -779,7 +792,7 @@ public class RailStackshot extends RailBase {
 				STEPS_PER_REV = steps_per_rev;
 				LCD = lcd;
 				HIPRECISION = hiprecision;
-				// on force les textFields pour éviter leur modifiication par
+				// on force les textFields pour ï¿½viter leur modifiication par
 				// lostfocus
 				textFieldRailName.setText(RAILNAME);
 				textFieldMAXSPEED.setText(nf.format(MAXSPEED));
@@ -1052,7 +1065,7 @@ public class RailStackshot extends RailBase {
 				LCD = defLCD;
 				HIPRECISION = defHIPRECISION;
 
-				// on force les textFields pour éviter leur modifiication par
+				// on force les textFields pour ï¿½viter leur modifiication par
 				// lostfocus
 				textFieldMAXSPEED.setText(nf.format(MAXSPEED));
 				textFieldTRAMP.setText(nf.format(RAMP_TIME));
