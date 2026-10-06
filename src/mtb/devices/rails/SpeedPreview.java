@@ -73,9 +73,13 @@ public final class SpeedPreview {
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setContentPane(buildContent());
 
-        this.requestedSpeedField.setText(Double.toString(DEFAULT_SPEED_MM_PER_SECOND));
-        this.stepsPerRevolutionField.setText("3200");
-        this.mmPerRevolutionField.setText(Double.toString(DEFAULT_MM_PER_REVOLUTION));
+        NumberFormat inputFormat = NumberFormat.getNumberInstance(locale);
+        inputFormat.setGroupingUsed(false);
+        inputFormat.setMinimumFractionDigits(0);
+        inputFormat.setMaximumFractionDigits(4);
+        this.requestedSpeedField.setText(inputFormat.format(DEFAULT_SPEED_MM_PER_SECOND));
+        this.stepsPerRevolutionField.setText(inputFormat.format(DEFAULT_STEPS_PER_REVOLUTION));
+        this.mmPerRevolutionField.setText(inputFormat.format(DEFAULT_MM_PER_REVOLUTION));
 
         DocumentListener listener = new DocumentListener() {
             @Override
