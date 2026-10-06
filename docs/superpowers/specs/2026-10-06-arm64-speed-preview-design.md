@@ -17,7 +17,8 @@ make it easy to compare small distance-per-revolution values such as 0.2 and
 - Share the speed calculation between the preview and `RailStackshot`, so the
   preview reflects the conversion used by the controller code.
 - Provide a simple macOS launcher that compiles and starts only the preview
-  classes using the installed JDK.
+  classes using the already installed Apple Silicon JDK.
+- Do not install Rosetta or use an x86_64/Rosetta runtime.
 - Do not communicate with USB, FTDI, a controller, or a camera.
 
 The preview is not the existing full StackShot application. Its packaged JAR
@@ -68,6 +69,7 @@ currently depends on unavailable proprietary Canon EDSDK bindings.
 ## Out of scope
 
 - Fixing the existing packaged application's JNA incompatibility.
+- Installing or using Rosetta.
 - Emulating rail motion, USB communication, or the reported stuttering.
 - Testing on physical hardware or claiming the 20,000 steps/s estimate is
   confirmed.
