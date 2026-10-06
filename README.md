@@ -52,6 +52,10 @@ Le projet est un projet Eclipse (.classpath, .project). Ouvrir dans Eclipse et b
 Windows : lancer `StackShotCtrl.jar` ou l'exécutable `Simple Stackshot Controller.exe`
 Linux : `./SimpleStackShotCtrl.bash`
 
+### Aperçu de vitesse (macOS Apple Silicon)
+
+Lancer `./run-speed-preview.command` depuis la racine du dépôt. Le script utilise le JDK 8 arm64 déjà installé et n'installe pas Rosetta. Cette fenêtre calcule la vitesse effective sans rail ni communication USB; elle ne lance pas l'application complète.
+
 ## Licence
 
 Ce projet est sous licence propriétaire — Copyright (c) 2013 macro-toolbox.com.
