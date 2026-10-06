@@ -2,7 +2,8 @@
 
 ## Status
 
-Approved by the user on 2026-10-06.
+Design direction approved on 2026-10-06; verification scope revised at the
+user's request and awaiting document review.
 
 ## Goal and scope
 
@@ -53,9 +54,8 @@ shared conversion path for initial controller setup and later updates.
 
 ## Verification
 
-Add regression coverage for the conversion: standard settings remain
-uncapped, 0.2 mm/rev at the reported defaults is limited, and a smaller
-distance/rev does not exceed 20,000 steps/s. Verify that changing either
-distance/rev or steps/rev reapplies the bounded speed. Run the repository's
-available Java compilation/build checks. Hardware movement and USB
-communication still require confirmation on the actual setup.
+Do not add automated tests or a test harness at this stage, per the user's
+request. Review the conversion and configuration-update paths in the code,
+and run the repository's available Java compilation/build checks. Hardware
+movement and USB communication still require confirmation on the actual
+setup.
